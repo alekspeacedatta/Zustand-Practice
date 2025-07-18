@@ -1,19 +1,16 @@
 import { useEffect } from "react";
 import { useUserStore } from "../stores/useUserStore"
-import { useProductStore } from "../stores/useProductStore";
 
 const SelectedUser = () => {
 
-    const users = useUserStore(state => state.users);
-    const selectedUser = useUserStore(state => state.selectedUser);
-    const checkUser = useUserStore(state => state.checkUser)
-    const deleteAllProducts  = useProductStore(state => state.deleteAllProduct)
+    const users = useUserStore((state) => state.users);
+    const selectedUser = useUserStore((state) => state.selectedUser);
+    const checkUser = useUserStore((state) => state.checkUser)
 
 
     useEffect(() => {
-        deleteAllProducts();
         checkUser();
-    }, [selectedUser, users])
+    }, [ users ])
 
     return (
         <div className="selected-user">

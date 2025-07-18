@@ -3,7 +3,7 @@ import { useProductStore } from "../stores/useProductStore"
 
 const Product = () => {
 
-    const products = useProductStore(state => state.products);
+    const products = useProductStore((state) => state.products);
     const { addProduct, deleteAllProduct, deleteProduct } = useProductStore()
 
 

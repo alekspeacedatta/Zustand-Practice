@@ -5,7 +5,7 @@ const User = () => {
 
     const [ name, setName ] = useState('');
 
-    const users = useUserStore(state => state.users);
+    const users = useUserStore((state) => state.users);
     const { addUser, deleteUser, selectUser } = useUserStore();
 
     
