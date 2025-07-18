@@ -1,9 +1,9 @@
 import { create } from "zustand";
-import { useProductStore } from "./useProductStore";
-import { useUserStore } from "./useUserStore";
+import { productSlice } from "./productSlice";
+import { userSlice } from "./userSlice";
 import { type ProductStoreType, type UserStoreType } from "../Types/Type";
 
-export const useProductUser = create< UserStoreType & ProductStoreType >((...args) => ({
-    ...useProductStore(...args),
-    ...useUserStore(...args),
-}))
+export const useProductUser = create< ProductStoreType & UserStoreType >((...args) => ({
+  ...productSlice(...args),
+  ...userSlice(...args),
+}));

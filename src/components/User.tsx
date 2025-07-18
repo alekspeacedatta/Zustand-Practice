@@ -1,14 +1,12 @@
 import { useState } from "react";
-import { useUserStore } from "../stores/useUserStore"
+import { useProductUser } from "../stores/useProductUser";
 
 const User = () => {
-
     const [ name, setName ] = useState('');
 
-    const users = useUserStore((state) => state.users);
-    const { addUser, deleteUser, selectUser } = useUserStore();
+    const users = useProductUser(state => state.users);
+    const { addUser, deleteUser, selectUser } = useProductUser();
 
-    
     return (
         <div>
             <div className="users-container">

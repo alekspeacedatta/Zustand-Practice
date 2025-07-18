@@ -1,11 +1,11 @@
 import { useEffect } from "react";
-import { useUserStore } from "../stores/useUserStore"
+import { useProductUser } from "../stores/useProductUser";
 
 const SelectedUser = () => {
 
-    const users = useUserStore((state) => state.users);
-    const selectedUser = useUserStore((state) => state.selectedUser);
-    const checkUser = useUserStore((state) => state.checkUser)
+    const users = useProductUser((state) => state.users);
+    const selectedUser = useProductUser((state) => state.selectedUser);
+    const checkUser = useProductUser((state) => state.checkUser)
 
 
     useEffect(() => {

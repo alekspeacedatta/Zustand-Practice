@@ -1,9 +1,5 @@
-import { create } from "zustand";
-import { type UserStoreType } from "../Types/Type";
-
 let x = 1;
-
-export const useUserStore = create<UserStoreType>((set, get) => ({
+export const userSlice = (set, get, api) => ({
     users: [],
     selectedUser: null,
 
@@ -14,13 +10,13 @@ export const useUserStore = create<UserStoreType>((set, get) => ({
 
     deleteUser: ( id : number) => {
         const { users } = get();
-        const filteredUsers = users.filter( user => user.id !== id );
+        const filteredUsers = users.filter( (user : any) => user.id !== id );
         set({ users:  filteredUsers  });
     },
 
     selectUser: ( id: number ) => {
         const { users } = get();
-        const selectUser = users.find( user => user.id === id ) || null
+        const selectUser = users.find( ( user : any ) => user.id === id ) || null
         set({ selectedUser: selectUser })
     },
     checkUser: () => {
@@ -28,4 +24,4 @@ export const useUserStore = create<UserStoreType>((set, get) => ({
         if(users.length < 1) set({ selectedUser: null })
     }
 
-}))
+})

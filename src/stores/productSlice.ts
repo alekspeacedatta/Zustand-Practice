@@ -1,9 +1,5 @@
-import { create } from "zustand";
-import { type ProductStoreType } from "../Types/Type";
-
 let x = 1;
-
-export const useProductStore = create<ProductStoreType>((set, get) => ({
+export const productSlice = (set, get, api) => ({
     products: [],
     selectedUser: {},
     addProduct: () => {
@@ -19,4 +15,4 @@ export const useProductStore = create<ProductStoreType>((set, get) => ({
         set({ products: [] })
     }
 
-}))
+})
