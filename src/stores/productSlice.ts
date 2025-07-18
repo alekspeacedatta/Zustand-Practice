@@ -1,5 +1,5 @@
 let x = 1;
-export const productSlice = (set, get, api) => ({
+export const productSlice = (set : any, get : any, api : any) => ({
     products: [],
     selectedUser: {},
     addProduct: () => {
@@ -8,7 +8,7 @@ export const productSlice = (set, get, api) => ({
     },
     deleteProduct: (id: number) => {
         const { products } = get();
-        const filteredProducts = products?.filter(product => product.id !== id);
+        const filteredProducts = products?.filter( (product : any) => product.id !== id);
         set({ products: filteredProducts })
     },
     deleteAllProduct: () => {
