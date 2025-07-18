@@ -1,5 +1,5 @@
 let x = 1;
-export const productSlice = (set : any, get : any, api : any) => ({
+export const productSlice = (set : any, get : any, api? : any) => ({
     products: [],
     selectedUser: {},
     addProduct: () => {
