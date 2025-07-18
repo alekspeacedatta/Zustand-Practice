@@ -15,8 +15,8 @@ export interface UserType {
     platform: string
 }
 export interface UserStoreType {
-    users: UserType[],
-    selectedUser: UserType | null,
+    users: UserType[]
+    selectedUser: UserType | null;
     addUser: ( name : string ) => void,
     deleteUser: ( id: number ) => void;
     selectUser: ( id: number ) => void;

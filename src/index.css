@@ -2,7 +2,6 @@
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -12,7 +11,117 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+*{
+  margin: 0;
+  padding: 0;
+}
+#root{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 150px;
+  width: 100%;
+}
+.user-info{
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 65vh;
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  form{
+    margin: 15px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    input{
+      height: 35px;
+      padding-left: 10px;
+      font-size: 18px;
+    }
+  }
+  .users-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0px;
+    gap: 20px;
+    height: 25vh;
+    margin-top: 30px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 2px #515252;
+    .user{
+      width: 60%;
+      border-radius: 15px;
+      box-shadow: 1px 1px 2px 2px #515252;
+      background-color: #242424;
+      padding: 25px 65px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      .action{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  }
+}
+.selected-user{
+  width: 400px;
+  margin:  0 auto;
+}
+.product-info{
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 65vh;
+  section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .product-action{
+    margin: 15px 0px;
+    display: flex;
+    gap: 10px;
+  }
+  .products-container{
+    margin-top: 30px;
+    overflow-y: scroll;
+    height: 25vh;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 2px #515252;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0px;
+    gap: 20px;
+    .product{
+      width: 60%;
+      border-radius: 15px;
+      box-shadow: 1px 1px 2px 2px #515252;
+      background-color: #242424;
+      padding: 25px 65px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      /* .product-action{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      } */
+    }
+  }
+}
 a {
   font-weight: 500;
   color: #646cff;

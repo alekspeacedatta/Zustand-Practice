@@ -7,13 +7,12 @@ export const userSlice = (set, get, api) => ({
         const { users: currentUsers } = get();
         set({ users:  currentUsers ? [ ...currentUsers,  { id: x++, name: name, platform: 'google'}] : [{ id: x++, name: name, platform: 'google' }] });    
     },
-
     deleteUser: ( id : number) => {
         const { users } = get();
         const filteredUsers = users.filter( (user : any) => user.id !== id );
         set({ users:  filteredUsers  });
-    },
-
+    },  
+    
     selectUser: ( id: number ) => {
         const { users } = get();
         const selectUser = users.find( ( user : any ) => user.id === id ) || null
