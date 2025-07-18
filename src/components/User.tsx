@@ -1,12 +1,21 @@
+import { useState } from "react";
 import { useUserStore } from "../stores/useUserStore"
 
 const User = () => {
+
+    const [ name, setName ] = useState('');
+
     const users = useUserStore(state => state.users);
     const { addUser, deleteUser, selectUser } = useUserStore();
+
+    
     return (
         <div>
             <div className="users-container">
-                <button onClick={addUser}>Add new User</button>
+                <form onSubmit={(e) => {e.preventDefault(), addUser(name) }}>
+                    <input type="text" onChange={e => setName(e.target.value)} placeholder="enter username" />
+                    <button type="submit" >Add new User</button>
+                </form>
                 {users.map(user => (
                     <div className="user" key={user.id}>
                         <section>

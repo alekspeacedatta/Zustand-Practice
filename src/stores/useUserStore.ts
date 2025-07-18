@@ -7,9 +7,9 @@ export const useUserStore = create<UserStoreType>((set, get) => ({
     users: [],
     selectedUser: null,
 
-    addUser: () => {
+    addUser: ( name: string ) => {
         const { users: currentUsers } = get();
-        set({ users:  currentUsers ? [ ...currentUsers,  { id: x++, name: 'aleksandre', platform: 'google'}] : [{ id: x++, name: 'aleksandre', platform: 'google' }] });    
+        set({ users:  currentUsers ? [ ...currentUsers,  { id: x++, name: name, platform: 'google'}] : [{ id: x++, name: name, platform: 'google' }] });    
     },
 
     deleteUser: ( id : number) => {
@@ -23,6 +23,9 @@ export const useUserStore = create<UserStoreType>((set, get) => ({
         const selectUser = users.find( user => user.id === id ) || null
         set({ selectedUser: selectUser })
     },
-
+    checkUser: () => {
+        const { users } = get();
+        if(users.length < 1) set({ selectedUser: null })
+    }
 
 }))

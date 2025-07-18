@@ -1,18 +1,19 @@
-import { useEffect, useState } from "react";
-import { type ProductType } from "../Types/Type";
+import { useEffect } from "react";
 import { useUserStore } from "../stores/useUserStore"
 import { useProductStore } from "../stores/useProductStore";
+
 const SelectedUser = () => {
 
+    const users = useUserStore(state => state.users);
     const selectedUser = useUserStore(state => state.selectedUser);
-    const products = useProductStore(state => state.products);
+    const checkUser = useUserStore(state => state.checkUser)
     const deleteAllProducts  = useProductStore(state => state.deleteAllProduct)
 
-    const [ product, setProduct ] = useState<ProductType | {}>({});
 
     useEffect(() => {
         deleteAllProducts();
-    }, [selectedUser])
+        checkUser();
+    }, [selectedUser, users])
 
     return (
         <div className="selected-user">
